@@ -2,7 +2,8 @@
 
 ## Framework & Database
 
-* Nodejs Express
+* Nodejs Express 
+* JWT
 * Reactjs
 * mysql (phpMyAdmin)
 
