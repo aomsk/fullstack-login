@@ -40,7 +40,7 @@ function Posts() {
       {posts
         ? posts.map((post) => {
             return (
-              <div key={post.id} className="drop-shadow-m bg-gray-200 m-2 p-5 h-1/2 rounded-lg">
+              <div key={post.id} className="drop-shadow-m border-solid border-2 border-black rounded-lg drop-shadow-md m-2 p-5 h-1/2">
                 <h3 className="text-xl font-bold mb-3">
                   {post.id}. {post.title}
                 </h3>
