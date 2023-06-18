@@ -6,27 +6,28 @@ import Login from "./pages/Login.tsx";
 import Register from "./pages/Register.tsx";
 import Posts from "./pages/Posts.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
-// import App from "./App.tsx";
 
-type Props = {
-  children: React.ReactNode;
-};
+// type Props = {
+//   children: React.ReactNode;
+// };
 
-function ProtectedRoute(props: any) {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
-  return props.children;
-}
+const token = localStorage.getItem("token");
 
-function ProtectedRouteOut({ children }: Props) {
-  const token = localStorage.getItem("token");
-  if (token) {
-    return <Navigate to="/posts" replace />;
-  }
-  return children;
-}
+// const ProtectedRoute = (props: any) => {
+//   const token = localStorage.getItem("token");
+//   if (!token) {
+//     return <Navigate to="/login" replace />;
+//   }
+//   return props.children;
+// };
+
+// const ProtectedRouteOut = ({ children }: Props) => {
+//   const token = localStorage.getItem("token");
+//   if (token) {
+//     return <Navigate to="/posts" replace />;
+//   }
+//   return children;
+// };
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -35,27 +36,30 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/" element={<Login />} errorElement={<ErrorPage />} />
         <Route
           path="/login"
-          element={
-            <ProtectedRouteOut>
-              <Login />
-            </ProtectedRouteOut>
-          }
+          element={!token ? <Login /> : <Navigate to={"/posts"} replace />}
+          // element={
+          //   <ProtectedRouteOut>
+          //     <Login />
+          //   </ProtectedRouteOut>
+          // }
         />
         <Route
           path="/register"
-          element={
-            <ProtectedRouteOut>
-              <Register />
-            </ProtectedRouteOut>
-          }
+          element={!token ? <Register /> : <Navigate to={"/posts"} replace />}
+          // element={
+          //   <ProtectedRouteOut>
+          //     <Register />
+          //   </ProtectedRouteOut>
+          // }
         />
         <Route
           path="/posts"
-          element={
-            <ProtectedRoute>
-              <Posts />
-            </ProtectedRoute>
-          }
+          element={token ? <Posts /> : <Navigate to={"/login"} replace />}
+          // element={
+          //   <ProtectedRoute>
+          //     <Posts />
+          //   </ProtectedRoute>
+          // }
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
