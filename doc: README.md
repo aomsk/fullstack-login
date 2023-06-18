@@ -4,7 +4,7 @@
 
 * Nodejs Express 
 * JWT
-* Reactjs
+* React TypeScript (Vite)
 * mysql (phpMyAdmin)
 
 ## login-api (Backend)
