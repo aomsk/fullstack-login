@@ -4,7 +4,7 @@
 
 * Nodejs Express 
 * JWT
-* Reactjs
+* React TypeScript (Vite)
 * mysql (phpMyAdmin)
 
 ## login-api (Backend)
@@ -14,9 +14,9 @@
   3. nodemon app.js
 ```
 
-## react-login (Frontend)
+## fronted (Frontend)
 ```
-  1. cd react-login
+  1. cd fronted
   2. npm install
-  3. npm start
+  3. npm run dev
 ```
