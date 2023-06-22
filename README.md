@@ -5,7 +5,7 @@
 * Nodejs Express 
 * JWT
 * React TypeScript (Vite)
-* mysql (phpMyAdmin)
+* phpMyAdmin
 
 ## login-api (Backend)
 ```
